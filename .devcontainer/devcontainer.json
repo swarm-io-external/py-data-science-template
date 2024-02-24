@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 {
-	"image":"ghcr.io/braingeneers/research:latest",
+	"image":"ghcr.io/swarm-io-external/py-data-science:latest",
 
 	"customizations": {
 		"vscode": {
