@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "project-name-goes-here"
+dynamic = [
+        "dependencies",
+        "version"
+]
+authors = [
+  { name="Customer Name", email="customer-email" }
+]
+description = "The lensing pipeline of the future: GPU-accelerated, automatically-differentiable, highly modular. Currently under heavy development: expect interface changes and some imprecise/untested calculations."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = [
+        "text1",
+        "text2",
+        "text3"
+]
+classifiers=[
+        "Development Status :: 1 - Planning",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3"
+]
+
+[project.urls]
+Homepage = "customer-homepage-goes-here"
+Documentation = "https://project-name.readthedocs.io/en/latest/"
+Repository = "https://github.com/swarm-io-external/project-name-goes-here"
+Issues = "https://github.com/swarm-io-external/project-name-goes-here/issues"
+
+[project.optional-dependencies]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/<project-name-goes-here>/_version.py"
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
+
+[tool.ruff]
+# Same as Black.
+line-length = 100
+
+[tool.pytest.ini_options]
+norecursedirs = "tests/utils"
